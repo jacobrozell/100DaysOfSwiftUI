@@ -1,6 +1,6 @@
 //
 //  ContentView.swift
-//  ChallengeDay19
+//  ChallengeDay19Watch Extension
 //
 //  Created by Jacob Rozell on 3/3/20.
 //  Copyright © 2020 jacobrozell. All rights reserved.
@@ -61,34 +61,30 @@ struct ContentView: View {
     }
    
     var body: some View {
-        NavigationView {
-            Form {
-                
-                Section(header: Text("1. Pick Input Unit")) {
-                    Picker("Input Unit", selection: $unit1) {
-                        ForEach(0 ..< units.count) {
-                            Text("\(self.units[$0])")
-                        }
-                    }.pickerStyle(SegmentedPickerStyle())
-                }
-                
-                Section(header: Text("2. Enter Value")) {
-                    TextField("Value", text: $value)
-                }
-                
-                Section(header: Text("3. Pick Output Unit")) {
-                    Picker("Output Unit", selection: $unit2) {
-                        ForEach(0 ..< units.count) {
-                            Text("\(self.units[$0])")
-                        }
-                    }.pickerStyle(SegmentedPickerStyle())
-                }
-                
-                Section(header: Text("4. Result")) {
-                    Text("\(result, specifier: "%.3f")")
+        Form {
+            Section(header: Text("1. Pick Input Unit")) {
+                Picker("Input Unit", selection: $unit1) {
+                    ForEach(0 ..< units.count) {
+                        Text("\(self.units[$0])")
+                    }
                 }
             }
-        .navigationBarTitle("Conversion")
+            
+            Section(header: Text("2. Enter Value")) {
+                TextField("Value", text: $value)
+            }
+        
+            Section(header: Text("3. Pick Output Unit")) {
+                Picker("Output Unit", selection: $unit2) {
+                    ForEach(0 ..< units.count) {
+                        Text("\(self.units[$0])")
+                    }
+                }
+            }
+            
+            Section(header: Text("4. Result")) {
+                Text("\(result, specifier: "%.3f")")
+            }
         }
     }
 }

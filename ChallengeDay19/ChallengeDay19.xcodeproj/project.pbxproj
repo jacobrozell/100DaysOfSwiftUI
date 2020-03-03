@@ -13,7 +13,60 @@
 		36047887240EEB2B00029603 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36047886240EEB2B00029603 /* Assets.xcassets */; };
 		3604788A240EEB2B00029603 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36047889240EEB2B00029603 /* Preview Assets.xcassets */; };
 		3604788D240EEB2B00029603 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3604788B240EEB2B00029603 /* LaunchScreen.storyboard */; };
+		3604789A240F0ABB00029603 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36047898240F0ABB00029603 /* Interface.storyboard */; };
+		3604789C240F0ABC00029603 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3604789B240F0ABC00029603 /* Assets.xcassets */; };
+		360478A3240F0ABD00029603 /* ChallengeDay19Watch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 360478A2240F0ABC00029603 /* ChallengeDay19Watch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		360478A8240F0ABD00029603 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360478A7240F0ABD00029603 /* ContentView.swift */; };
+		360478AA240F0ABD00029603 /* HostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360478A9240F0ABD00029603 /* HostingController.swift */; };
+		360478AC240F0ABD00029603 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360478AB240F0ABD00029603 /* ExtensionDelegate.swift */; };
+		360478AE240F0ABD00029603 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360478AD240F0ABD00029603 /* NotificationController.swift */; };
+		360478B0240F0ABD00029603 /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360478AF240F0ABD00029603 /* NotificationView.swift */; };
+		360478B2240F0ABD00029603 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 360478B1240F0ABD00029603 /* Assets.xcassets */; };
+		360478B5240F0ABD00029603 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 360478B4240F0ABD00029603 /* Preview Assets.xcassets */; };
+		360478BA240F0ABD00029603 /* ChallengeDay19Watch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 36047896240F0ABB00029603 /* ChallengeDay19Watch.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		360478A4240F0ABD00029603 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 36047875240EEB2A00029603 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 360478A1240F0ABC00029603;
+			remoteInfo = "ChallengeDay19Watch Extension";
+		};
+		360478B8240F0ABD00029603 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 36047875240EEB2A00029603 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 36047895240F0ABB00029603;
+			remoteInfo = ChallengeDay19Watch;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		360478BB240F0ABD00029603 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				360478BA240F0ABD00029603 /* ChallengeDay19Watch.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		360478BE240F0ABD00029603 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				360478A3240F0ABD00029603 /* ChallengeDay19Watch Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		3604787D240EEB2A00029603 /* ChallengeDay19.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChallengeDay19.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -24,10 +77,31 @@
 		36047889240EEB2B00029603 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		3604788C240EEB2B00029603 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3604788E240EEB2B00029603 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		36047896240F0ABB00029603 /* ChallengeDay19Watch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChallengeDay19Watch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		36047899240F0ABB00029603 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		3604789B240F0ABC00029603 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3604789D240F0ABC00029603 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		360478A2240F0ABC00029603 /* ChallengeDay19Watch Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "ChallengeDay19Watch Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		360478A7240F0ABD00029603 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		360478A9240F0ABD00029603 /* HostingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostingController.swift; sourceTree = "<group>"; };
+		360478AB240F0ABD00029603 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		360478AD240F0ABD00029603 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		360478AF240F0ABD00029603 /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
+		360478B1240F0ABD00029603 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		360478B4240F0ABD00029603 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		360478B6240F0ABD00029603 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		360478B7240F0ABD00029603 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		3604787A240EEB2A00029603 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3604789F240F0ABC00029603 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -41,6 +115,8 @@
 			isa = PBXGroup;
 			children = (
 				3604787F240EEB2A00029603 /* ChallengeDay19 */,
+				36047897240F0ABB00029603 /* ChallengeDay19Watch */,
+				360478A6240F0ABD00029603 /* ChallengeDay19Watch Extension */,
 				3604787E240EEB2A00029603 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -49,6 +125,8 @@
 			isa = PBXGroup;
 			children = (
 				3604787D240EEB2A00029603 /* ChallengeDay19.app */,
+				36047896240F0ABB00029603 /* ChallengeDay19Watch.app */,
+				360478A2240F0ABC00029603 /* ChallengeDay19Watch Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -75,6 +153,40 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		36047897240F0ABB00029603 /* ChallengeDay19Watch */ = {
+			isa = PBXGroup;
+			children = (
+				36047898240F0ABB00029603 /* Interface.storyboard */,
+				3604789B240F0ABC00029603 /* Assets.xcassets */,
+				3604789D240F0ABC00029603 /* Info.plist */,
+			);
+			path = ChallengeDay19Watch;
+			sourceTree = "<group>";
+		};
+		360478A6240F0ABD00029603 /* ChallengeDay19Watch Extension */ = {
+			isa = PBXGroup;
+			children = (
+				360478A7240F0ABD00029603 /* ContentView.swift */,
+				360478A9240F0ABD00029603 /* HostingController.swift */,
+				360478AB240F0ABD00029603 /* ExtensionDelegate.swift */,
+				360478AD240F0ABD00029603 /* NotificationController.swift */,
+				360478AF240F0ABD00029603 /* NotificationView.swift */,
+				360478B1240F0ABD00029603 /* Assets.xcassets */,
+				360478B6240F0ABD00029603 /* Info.plist */,
+				360478B7240F0ABD00029603 /* PushNotificationPayload.apns */,
+				360478B3240F0ABD00029603 /* Preview Content */,
+			);
+			path = "ChallengeDay19Watch Extension";
+			sourceTree = "<group>";
+		};
+		360478B3240F0ABD00029603 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				360478B4240F0ABD00029603 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -85,15 +197,51 @@
 				36047879240EEB2A00029603 /* Sources */,
 				3604787A240EEB2A00029603 /* Frameworks */,
 				3604787B240EEB2A00029603 /* Resources */,
+				360478BB240F0ABD00029603 /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				360478B9240F0ABD00029603 /* PBXTargetDependency */,
 			);
 			name = ChallengeDay19;
 			productName = ChallengeDay19;
 			productReference = 3604787D240EEB2A00029603 /* ChallengeDay19.app */;
 			productType = "com.apple.product-type.application";
+		};
+		36047895240F0ABB00029603 /* ChallengeDay19Watch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 360478C2240F0ABD00029603 /* Build configuration list for PBXNativeTarget "ChallengeDay19Watch" */;
+			buildPhases = (
+				36047894240F0ABB00029603 /* Resources */,
+				360478BE240F0ABD00029603 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				360478A5240F0ABD00029603 /* PBXTargetDependency */,
+			);
+			name = ChallengeDay19Watch;
+			productName = ChallengeDay19Watch;
+			productReference = 36047896240F0ABB00029603 /* ChallengeDay19Watch.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		360478A1240F0ABC00029603 /* ChallengeDay19Watch Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 360478C1240F0ABD00029603 /* Build configuration list for PBXNativeTarget "ChallengeDay19Watch Extension" */;
+			buildPhases = (
+				3604789E240F0ABC00029603 /* Sources */,
+				3604789F240F0ABC00029603 /* Frameworks */,
+				360478A0240F0ABC00029603 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "ChallengeDay19Watch Extension";
+			productName = "ChallengeDay19Watch Extension";
+			productReference = 360478A2240F0ABC00029603 /* ChallengeDay19Watch Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -106,6 +254,12 @@
 				ORGANIZATIONNAME = jacobrozell;
 				TargetAttributes = {
 					3604787C240EEB2A00029603 = {
+						CreatedOnToolsVersion = 11.3;
+					};
+					36047895240F0ABB00029603 = {
+						CreatedOnToolsVersion = 11.3;
+					};
+					360478A1240F0ABC00029603 = {
 						CreatedOnToolsVersion = 11.3;
 					};
 				};
@@ -124,6 +278,8 @@
 			projectRoot = "";
 			targets = (
 				3604787C240EEB2A00029603 /* ChallengeDay19 */,
+				36047895240F0ABB00029603 /* ChallengeDay19Watch */,
+				360478A1240F0ABC00029603 /* ChallengeDay19Watch Extension */,
 			);
 		};
 /* End PBXProject section */
@@ -136,6 +292,24 @@
 				3604788D240EEB2B00029603 /* LaunchScreen.storyboard in Resources */,
 				3604788A240EEB2B00029603 /* Preview Assets.xcassets in Resources */,
 				36047887240EEB2B00029603 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		36047894240F0ABB00029603 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3604789C240F0ABC00029603 /* Assets.xcassets in Resources */,
+				3604789A240F0ABB00029603 /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		360478A0240F0ABC00029603 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				360478B5240F0ABD00029603 /* Preview Assets.xcassets in Resources */,
+				360478B2240F0ABD00029603 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -152,7 +326,32 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		3604789E240F0ABC00029603 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				360478AA240F0ABD00029603 /* HostingController.swift in Sources */,
+				360478A8240F0ABD00029603 /* ContentView.swift in Sources */,
+				360478AE240F0ABD00029603 /* NotificationController.swift in Sources */,
+				360478AC240F0ABD00029603 /* ExtensionDelegate.swift in Sources */,
+				360478B0240F0ABD00029603 /* NotificationView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		360478A5240F0ABD00029603 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 360478A1240F0ABC00029603 /* ChallengeDay19Watch Extension */;
+			targetProxy = 360478A4240F0ABD00029603 /* PBXContainerItemProxy */;
+		};
+		360478B9240F0ABD00029603 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 36047895240F0ABB00029603 /* ChallengeDay19Watch */;
+			targetProxy = 360478B8240F0ABD00029603 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		3604788B240EEB2B00029603 /* LaunchScreen.storyboard */ = {
@@ -161,6 +360,14 @@
 				3604788C240EEB2B00029603 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		36047898240F0ABB00029603 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				36047899240F0ABB00029603 /* Base */,
+			);
+			name = Interface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -320,6 +527,92 @@
 			};
 			name = Release;
 		};
+		360478BC240F0ABD00029603 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = J638W5H5RB;
+				IBSC_MODULE = ChallengeDay19Watch_Extension;
+				INFOPLIST_FILE = ChallengeDay19Watch/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jacobrozell.ChallengeDay19.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.1;
+			};
+			name = Debug;
+		};
+		360478BD240F0ABD00029603 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = J638W5H5RB;
+				IBSC_MODULE = ChallengeDay19Watch_Extension;
+				INFOPLIST_FILE = ChallengeDay19Watch/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jacobrozell.ChallengeDay19.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.1;
+			};
+			name = Release;
+		};
+		360478BF240F0ABD00029603 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"ChallengeDay19Watch Extension/Preview Content\"";
+				DEVELOPMENT_TEAM = J638W5H5RB;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "ChallengeDay19Watch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.jacobrozell.ChallengeDay19.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.1;
+			};
+			name = Debug;
+		};
+		360478C0240F0ABD00029603 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"ChallengeDay19Watch Extension/Preview Content\"";
+				DEVELOPMENT_TEAM = J638W5H5RB;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "ChallengeDay19Watch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.jacobrozell.ChallengeDay19.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.1;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -337,6 +630,24 @@
 			buildConfigurations = (
 				36047892240EEB2B00029603 /* Debug */,
 				36047893240EEB2B00029603 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		360478C1240F0ABD00029603 /* Build configuration list for PBXNativeTarget "ChallengeDay19Watch Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				360478BF240F0ABD00029603 /* Debug */,
+				360478C0240F0ABD00029603 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		360478C2240F0ABD00029603 /* Build configuration list for PBXNativeTarget "ChallengeDay19Watch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				360478BC240F0ABD00029603 /* Debug */,
+				360478BD240F0ABD00029603 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
