@@ -7,6 +7,9 @@
 //
 
 import SwiftUI
+import AVFoundation
+
+var avPlayer: AVAudioPlayer?
 
 struct ContentView: View {
     @State private var countries = ["Estonia", "France", "Germany", "Ireland", "Italy", "Nigeria", "Poland", "Russia", "Spain", "UK", "US"].shuffled()
@@ -52,7 +55,7 @@ struct ContentView: View {
                 }
             }
             .alert(isPresented: $showingScore) {
-                Alert(title: Text(scoreTitle), message: Text("Your score is \(score)"), dismissButton: .default(Text("Continue")) {
+                Alert(title: Text(scoreTitle), message: Text("Your score is \(score)!"), dismissButton: .default(Text("Continue")) {
                     self.askQuestion()
                 })
             }
@@ -60,19 +63,38 @@ struct ContentView: View {
     }
     
     func flagTapped(_ number: Int) {
+        var result = ""
         if number == correctAnswer {
             scoreTitle = "Correct!"
             score += 1
+            result = "correct"
         } else {
             scoreTitle = "Incorrect!\nThat is the flag of \(countries[number])"
+            result = "incorrect"
+            
         }
         
         showingScore = true
+        DispatchQueue.main.async {
+            self.playSound(result)
+        }
     }
     
     func askQuestion() {
         countries = countries.shuffled()
         correctAnswer = Int.random(in: 0...2)
+    }
+    
+    func playSound(_ sound: String) {
+        let path = Bundle.main.path(forResource: "\(sound).mp3", ofType:nil)!
+        let url = URL(fileURLWithPath: path)
+
+        do {
+            avPlayer = try AVAudioPlayer(contentsOf: url)
+            avPlayer?.play()
+        } catch {
+            // couldn't load file :(
+        }
     }
 }
 
