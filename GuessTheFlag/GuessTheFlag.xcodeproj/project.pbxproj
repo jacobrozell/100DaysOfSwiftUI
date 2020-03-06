@@ -15,7 +15,61 @@
 		365AAC78241008FF000B79B5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 365AAC76241008FF000B79B5 /* LaunchScreen.storyboard */; };
 		368EA24924103FDA00C0AE90 /* incorrect.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 368EA24724103FDA00C0AE90 /* incorrect.mp3 */; };
 		368EA24A24103FDA00C0AE90 /* correct.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 368EA24824103FDA00C0AE90 /* correct.mp3 */; };
+		368EA25124109BBF00C0AE90 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 368EA24F24109BBF00C0AE90 /* Interface.storyboard */; };
+		368EA25324109BC100C0AE90 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 368EA25224109BC100C0AE90 /* Assets.xcassets */; };
+		368EA25A24109BC100C0AE90 /* GuessTheFlagWatch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 368EA25924109BC100C0AE90 /* GuessTheFlagWatch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		368EA25F24109BC100C0AE90 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368EA25E24109BC100C0AE90 /* ContentView.swift */; };
+		368EA26124109BC100C0AE90 /* HostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368EA26024109BC100C0AE90 /* HostingController.swift */; };
+		368EA26324109BC100C0AE90 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368EA26224109BC100C0AE90 /* ExtensionDelegate.swift */; };
+		368EA26524109BC100C0AE90 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368EA26424109BC100C0AE90 /* NotificationController.swift */; };
+		368EA26724109BC100C0AE90 /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368EA26624109BC100C0AE90 /* NotificationView.swift */; };
+		368EA26924109BC100C0AE90 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 368EA26824109BC100C0AE90 /* Assets.xcassets */; };
+		368EA26C24109BC100C0AE90 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 368EA26B24109BC100C0AE90 /* Preview Assets.xcassets */; };
+		368EA27124109BC100C0AE90 /* GuessTheFlagWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 368EA24D24109BBF00C0AE90 /* GuessTheFlagWatch.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		368EA27A24109C6700C0AE90 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 365AAC71241008FF000B79B5 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		368EA25B24109BC100C0AE90 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 365AAC60241008FC000B79B5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 368EA25824109BC100C0AE90;
+			remoteInfo = "GuessTheFlagWatch Extension";
+		};
+		368EA26F24109BC100C0AE90 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 365AAC60241008FC000B79B5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 368EA24C24109BBF00C0AE90;
+			remoteInfo = GuessTheFlagWatch;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		368EA27224109BC100C0AE90 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				368EA27124109BC100C0AE90 /* GuessTheFlagWatch.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		368EA27524109BC100C0AE90 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				368EA25A24109BC100C0AE90 /* GuessTheFlagWatch Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		365AAC68241008FC000B79B5 /* GuessTheFlag.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GuessTheFlag.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -28,10 +82,31 @@
 		365AAC79241008FF000B79B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		368EA24724103FDA00C0AE90 /* incorrect.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = incorrect.mp3; sourceTree = "<group>"; };
 		368EA24824103FDA00C0AE90 /* correct.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = correct.mp3; sourceTree = "<group>"; };
+		368EA24D24109BBF00C0AE90 /* GuessTheFlagWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GuessTheFlagWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		368EA25024109BBF00C0AE90 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		368EA25224109BC100C0AE90 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		368EA25424109BC100C0AE90 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		368EA25924109BC100C0AE90 /* GuessTheFlagWatch Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "GuessTheFlagWatch Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		368EA25E24109BC100C0AE90 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		368EA26024109BC100C0AE90 /* HostingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostingController.swift; sourceTree = "<group>"; };
+		368EA26224109BC100C0AE90 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		368EA26424109BC100C0AE90 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		368EA26624109BC100C0AE90 /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
+		368EA26824109BC100C0AE90 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		368EA26B24109BC100C0AE90 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		368EA26D24109BC100C0AE90 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		368EA26E24109BC100C0AE90 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		365AAC65241008FC000B79B5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		368EA25624109BC100C0AE90 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -45,6 +120,8 @@
 			isa = PBXGroup;
 			children = (
 				365AAC6A241008FC000B79B5 /* GuessTheFlag */,
+				368EA24E24109BBF00C0AE90 /* GuessTheFlagWatch */,
+				368EA25D24109BC100C0AE90 /* GuessTheFlagWatch Extension */,
 				365AAC69241008FC000B79B5 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -53,6 +130,8 @@
 			isa = PBXGroup;
 			children = (
 				365AAC68241008FC000B79B5 /* GuessTheFlag.app */,
+				368EA24D24109BBF00C0AE90 /* GuessTheFlagWatch.app */,
+				368EA25924109BC100C0AE90 /* GuessTheFlagWatch Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -81,6 +160,40 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		368EA24E24109BBF00C0AE90 /* GuessTheFlagWatch */ = {
+			isa = PBXGroup;
+			children = (
+				368EA24F24109BBF00C0AE90 /* Interface.storyboard */,
+				368EA25224109BC100C0AE90 /* Assets.xcassets */,
+				368EA25424109BC100C0AE90 /* Info.plist */,
+			);
+			path = GuessTheFlagWatch;
+			sourceTree = "<group>";
+		};
+		368EA25D24109BC100C0AE90 /* GuessTheFlagWatch Extension */ = {
+			isa = PBXGroup;
+			children = (
+				368EA25E24109BC100C0AE90 /* ContentView.swift */,
+				368EA26024109BC100C0AE90 /* HostingController.swift */,
+				368EA26224109BC100C0AE90 /* ExtensionDelegate.swift */,
+				368EA26424109BC100C0AE90 /* NotificationController.swift */,
+				368EA26624109BC100C0AE90 /* NotificationView.swift */,
+				368EA26824109BC100C0AE90 /* Assets.xcassets */,
+				368EA26D24109BC100C0AE90 /* Info.plist */,
+				368EA26E24109BC100C0AE90 /* PushNotificationPayload.apns */,
+				368EA26A24109BC100C0AE90 /* Preview Content */,
+			);
+			path = "GuessTheFlagWatch Extension";
+			sourceTree = "<group>";
+		};
+		368EA26A24109BC100C0AE90 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				368EA26B24109BC100C0AE90 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -91,15 +204,51 @@
 				365AAC64241008FC000B79B5 /* Sources */,
 				365AAC65241008FC000B79B5 /* Frameworks */,
 				365AAC66241008FC000B79B5 /* Resources */,
+				368EA27224109BC100C0AE90 /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				368EA27024109BC100C0AE90 /* PBXTargetDependency */,
 			);
 			name = GuessTheFlag;
 			productName = GuessTheFlag;
 			productReference = 365AAC68241008FC000B79B5 /* GuessTheFlag.app */;
 			productType = "com.apple.product-type.application";
+		};
+		368EA24C24109BBF00C0AE90 /* GuessTheFlagWatch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 368EA27924109BC100C0AE90 /* Build configuration list for PBXNativeTarget "GuessTheFlagWatch" */;
+			buildPhases = (
+				368EA24B24109BBF00C0AE90 /* Resources */,
+				368EA27524109BC100C0AE90 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				368EA25C24109BC100C0AE90 /* PBXTargetDependency */,
+			);
+			name = GuessTheFlagWatch;
+			productName = GuessTheFlagWatch;
+			productReference = 368EA24D24109BBF00C0AE90 /* GuessTheFlagWatch.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		368EA25824109BC100C0AE90 /* GuessTheFlagWatch Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 368EA27824109BC100C0AE90 /* Build configuration list for PBXNativeTarget "GuessTheFlagWatch Extension" */;
+			buildPhases = (
+				368EA25524109BC100C0AE90 /* Sources */,
+				368EA25624109BC100C0AE90 /* Frameworks */,
+				368EA25724109BC100C0AE90 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "GuessTheFlagWatch Extension";
+			productName = "GuessTheFlagWatch Extension";
+			productReference = 368EA25924109BC100C0AE90 /* GuessTheFlagWatch Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -112,6 +261,12 @@
 				ORGANIZATIONNAME = jacobrozell;
 				TargetAttributes = {
 					365AAC67241008FC000B79B5 = {
+						CreatedOnToolsVersion = 11.3;
+					};
+					368EA24C24109BBF00C0AE90 = {
+						CreatedOnToolsVersion = 11.3;
+					};
+					368EA25824109BC100C0AE90 = {
 						CreatedOnToolsVersion = 11.3;
 					};
 				};
@@ -130,6 +285,8 @@
 			projectRoot = "";
 			targets = (
 				365AAC67241008FC000B79B5 /* GuessTheFlag */,
+				368EA24C24109BBF00C0AE90 /* GuessTheFlagWatch */,
+				368EA25824109BC100C0AE90 /* GuessTheFlagWatch Extension */,
 			);
 		};
 /* End PBXProject section */
@@ -147,6 +304,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		368EA24B24109BBF00C0AE90 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				368EA25324109BC100C0AE90 /* Assets.xcassets in Resources */,
+				368EA25124109BBF00C0AE90 /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		368EA25724109BC100C0AE90 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				368EA26C24109BC100C0AE90 /* Preview Assets.xcassets in Resources */,
+				368EA27A24109C6700C0AE90 /* Assets.xcassets in Resources */,
+				368EA26924109BC100C0AE90 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -160,7 +336,32 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		368EA25524109BC100C0AE90 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				368EA26124109BC100C0AE90 /* HostingController.swift in Sources */,
+				368EA25F24109BC100C0AE90 /* ContentView.swift in Sources */,
+				368EA26524109BC100C0AE90 /* NotificationController.swift in Sources */,
+				368EA26324109BC100C0AE90 /* ExtensionDelegate.swift in Sources */,
+				368EA26724109BC100C0AE90 /* NotificationView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		368EA25C24109BC100C0AE90 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 368EA25824109BC100C0AE90 /* GuessTheFlagWatch Extension */;
+			targetProxy = 368EA25B24109BC100C0AE90 /* PBXContainerItemProxy */;
+		};
+		368EA27024109BC100C0AE90 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 368EA24C24109BBF00C0AE90 /* GuessTheFlagWatch */;
+			targetProxy = 368EA26F24109BC100C0AE90 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		365AAC76241008FF000B79B5 /* LaunchScreen.storyboard */ = {
@@ -169,6 +370,14 @@
 				365AAC77241008FF000B79B5 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		368EA24F24109BBF00C0AE90 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				368EA25024109BBF00C0AE90 /* Base */,
+			);
+			name = Interface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -328,6 +537,92 @@
 			};
 			name = Release;
 		};
+		368EA27324109BC100C0AE90 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = J638W5H5RB;
+				IBSC_MODULE = GuessTheFlagWatch_Extension;
+				INFOPLIST_FILE = GuessTheFlagWatch/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jacobrozell.GuessTheFlag.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.1;
+			};
+			name = Debug;
+		};
+		368EA27424109BC100C0AE90 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = J638W5H5RB;
+				IBSC_MODULE = GuessTheFlagWatch_Extension;
+				INFOPLIST_FILE = GuessTheFlagWatch/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jacobrozell.GuessTheFlag.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.1;
+			};
+			name = Release;
+		};
+		368EA27624109BC100C0AE90 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"GuessTheFlagWatch Extension/Preview Content\"";
+				DEVELOPMENT_TEAM = J638W5H5RB;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "GuessTheFlagWatch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.jacobrozell.GuessTheFlag.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.1;
+			};
+			name = Debug;
+		};
+		368EA27724109BC100C0AE90 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"GuessTheFlagWatch Extension/Preview Content\"";
+				DEVELOPMENT_TEAM = J638W5H5RB;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "GuessTheFlagWatch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.jacobrozell.GuessTheFlag.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.1;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -345,6 +640,24 @@
 			buildConfigurations = (
 				365AAC7D241008FF000B79B5 /* Debug */,
 				365AAC7E241008FF000B79B5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		368EA27824109BC100C0AE90 /* Build configuration list for PBXNativeTarget "GuessTheFlagWatch Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				368EA27624109BC100C0AE90 /* Debug */,
+				368EA27724109BC100C0AE90 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		368EA27924109BC100C0AE90 /* Build configuration list for PBXNativeTarget "GuessTheFlagWatch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				368EA27324109BC100C0AE90 /* Debug */,
+				368EA27424109BC100C0AE90 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
