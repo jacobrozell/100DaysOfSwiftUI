@@ -35,7 +35,11 @@ struct ContentView: View {
     @State private var currentChoice: RPS = .rock
     @State private var shouldWin = Bool.random()
     @State private var showAlert = false
+    
+    // Not being used currently
     @State private var showFinalAlert = false
+    //need to figure out where to put the alert
+    
     @State private var score = 0
     @State private var roundNum = 1
     @State private var resultString = "incorrect"
@@ -99,7 +103,7 @@ struct ContentView: View {
                 } else {
                     self.newRound(startOver: false)
                 }
-                })
+            })
         }
     }
     
@@ -135,6 +139,7 @@ struct ContentView: View {
             score += 1
             resultString = "correct"
         } else {
+            score = (score - 1 >= 0) ? (score - 1) : 0
             resultString = "incorrect"
         }
     }
