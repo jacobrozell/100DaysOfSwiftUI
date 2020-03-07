@@ -6,7 +6,17 @@
 //  Copyright © 2020 jacobrozell. All rights reserved.
 //
 
+//.alert(isPresented: self.$showFinalAlert) {
+//    Alert(title: Text("You \(self.finalResult)!"), dismissButton: .default(Text("Play Again")))
+//}
+
 import SwiftUI
+
+enum RPS: String {
+    case rock = "Rock"
+    case paper = "Paper"
+    case scissors = "Scissors"
+}
 
 struct TitleView: View {
     let text: String
@@ -22,36 +32,34 @@ struct TitleView: View {
 
 
 struct ContentView: View {
-    @State private var currentChoice = ""
+    @State private var currentChoice: RPS = .rock
     @State private var shouldWin = Bool.random()
     @State private var showAlert = false
-    @State private var wasCorrect = false
+    @State private var showFinalAlert = false
     @State private var score = 0
-    @State private var roundNum = 0
+    @State private var roundNum = 1
     @State private var resultString = "incorrect"
+    @State private var finalResult = "lost"
     @State private var randomIndex = Int.random(in: 0 ..< 3)
     
-    let choices = ["Rock", "Paper", "Scissors"]
+    let choices = [RPS.rock, RPS.paper, RPS.scissors]
     
     var body: some View {
         ZStack {
             LinearGradient(gradient: Gradient(colors: [.blue, .black]), startPoint: .leading, endPoint: .bottom)
                 .edgesIgnoringSafeArea(.all)
             
-            
             VStack(spacing: 35) {
                 
                 HStack {
-                    TitleView(text: "Round: \(roundNum)")
+                    TitleView(text: "Round: \(roundNum)/10")
                     Spacer()
                     TitleView(text: "Score: \(score)")
                 }
                 
-                TitleView(text: "I have chosen \(choices[randomIndex]).")
+                TitleView(text: "Computer chose:")
+                TitleView(text: "\(choices[randomIndex].rawValue)")
                 
-                // Image of choice here
-                
-                               
                 if shouldWin {
                     TitleView(text: "Win this round!")
                 } else {
@@ -59,6 +67,7 @@ struct ContentView: View {
                 }
                 
                 Spacer()
+                
                 HStack(spacing: 10) {
                     ForEach(choices, id: \.self) { choice in
         
@@ -66,46 +75,74 @@ struct ContentView: View {
                             self.currentChoice = choice
                             self.checkIfCorrect()
                         }) {
-                            //change this to images
-                            TitleView(text: "\(choice)")
+                            TitleView(text: "\(choice.rawValue.capitalized)")
                                 .clipShape(RoundedRectangle(cornerRadius: 12))
                                 .overlay(RoundedRectangle(cornerRadius: 12).stroke(Color.black, lineWidth: 2))
                         }
                     }
                 }
+                
                 Spacer()
             }
+            
         }
         .alert(isPresented: $showAlert) {
             Alert(title: Text("You were \(resultString)!"), dismissButton: .default(Text("Next round")) {
-                self.newRound()
-            })
+                if self.roundNum == 10 {
+                    if (6...10).contains(self.score) {
+                        self.finalResult = "won"
+                    } else {
+                        self.finalResult = "lost"
+                    }
+                    self.newRound(startOver: true)
+                    
+                } else {
+                    self.newRound(startOver: false)
+                }
+                })
+        }
+    }
+    
+    func calcIfWin() -> Bool {
+        let compChoice = choices[randomIndex]
+        let winningChoice: RPS
+        let losingChoice: RPS
+        
+        switch compChoice {
+        case .rock:
+            winningChoice = .paper
+            losingChoice = .scissors
+        case .paper:
+            winningChoice = .scissors
+            losingChoice = .rock
+        case .scissors:
+            winningChoice = .rock
+            losingChoice = .paper
+        }
+        
+        if shouldWin {
+            return currentChoice == winningChoice
+        } else {
+            return currentChoice == losingChoice
         }
     }
     
     func checkIfCorrect() {
+        let didWin = calcIfWin()
         showAlert = true
-        if (currentChoice == choices[randomIndex]) && shouldWin {
-            wasCorrect = true
-            score += 1
-            resultString = "correct"
-            return
-        }
         
-        if (currentChoice != choices[randomIndex]) && !shouldWin {
-            wasCorrect = true
+        if didWin {
             score += 1
             resultString = "correct"
-            return
-            
+        } else {
+            resultString = "incorrect"
         }
-
-        resultString = "incorrect"
-        wasCorrect = false
     }
     
-    func newRound() {
-        self.roundNum += 1
+    func newRound(startOver: Bool) {
+        showFinalAlert = startOver
+        score = startOver ? 0 : score
+        roundNum = startOver ? 1 : roundNum + 1
         shouldWin = Bool.random()
         randomIndex = Int.random(in: 0 ..< 3)
     }
