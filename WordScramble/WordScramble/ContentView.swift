@@ -9,22 +9,29 @@
 import SwiftUI
 
 struct ContentView: View {
-    let people = ["Finn", "Leia", "Luke", "Rey"]
+    @State private var startArray: [String] = []
+    @State private var startWord = ""
     
     var body: some View {
-        
+//        let word = "swift"
+//        let checker = UITextChecker()
+//        let range = NSRange(location: 0, length: word.utf16.count)
+//        let misspelledRange = checker.rangeOfMisspelledWord(in: word, range: range, startingAt: 0, wrap: false, language: "en")
+//
+
         if let fileURL = Bundle.main.url(forResource: "start", withExtension: "txt") {
             if let fileContents = try? String(contentsOf: fileURL) {
-                // we have file
+                startArray = fileContents.components(separatedBy: "\n")
+                if let letter = startArray.randomElement() {
+                    startWord = letter.trimmingCharacters(in: .whitespacesAndNewlines)
+                }
             } else {
                 // we no have file :(
+                print("uh-oh")
             }
         }
         
-        return List(people, id: \.self) {
-            Text("\($0)")
-        }
-        .listStyle(GroupedListStyle())
+        return Text("Hello")
     }
 }
 
