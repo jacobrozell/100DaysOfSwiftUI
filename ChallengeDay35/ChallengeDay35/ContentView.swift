@@ -26,112 +26,147 @@ struct ContentView: View {
     }
 }
 
-// MARK: Settings State
 struct SettingsForm: View {
     let questionChoices = ["5", "10", "15", "20"]
     @State private var tableToUse = 2
     @State private var selectedIndex = 0
     
-    var body: some View {
-        VStack {
-            Form {
-                Section(header:
-                    Text("Choose Table")
-                        .font(.headline)) {
-                            
-                    Stepper(value: $tableToUse, in: 2...12) {
-                        Text("Table: \(tableToUse)")
-                    }
-                }
-                
-                Section(header:
-                    Text("Choose Question Amount")
-                        .font(.headline)) {
-                            
-                    Picker("Questions", selection: $selectedIndex) {
-                        ForEach(0 ..< questionChoices.count) {
-                            Text("\(self.questionChoices[$0])")
-                        }
-                    }
-                    .pickerStyle(SegmentedPickerStyle())
-                    
-                    Text("Questions: \(questionChoices[selectedIndex])")
-                }
-            }
-            
-            NavigationLink(destination: GameView(tableToUse: tableToUse, selectedIndex: selectedIndex)) {
-                HStack {
-                    Text("Start Game!")
-                }
-                .padding(10.0)
-                .overlay(
-                    RoundedRectangle(cornerRadius: 16.0)
-                        .stroke(lineWidth: 1.0)
-                        .animation(.default)
-                )
-            }
-        }
-    }
-}
-
-// MARK: Game State
-struct GameView: View {
     @State private var questions: [Question] = []
-    var tableToUse: Int
-    var selectedIndex: Int
-    let questionChoices = ["5", "10", "15", "20"]
-    
-    @State private var currentQuestion = 0
+    @State private var currentQuestion = -1     // Starts at 0 in askQuestion
     @State private var correctIndex = 0
     
-    init(tableToUse: Int, selectedIndex: Int) {
-        self.tableToUse = tableToUse
-        self.selectedIndex = selectedIndex
-        questions = self.generateQuestions(tableValue: tableToUse, index: selectedIndex)
-    }
+    @State private var inSettings = true
+    let questionRange = 1...3
     
     var body: some View {
         VStack {
-            if !questions.isEmpty {
-                Text("\(questions[currentQuestion].text)")
-                
-                HStack(spacing: 50) {
-                    ForEach(1...3, id: \.self) { index in
-                        Button(action: {
-                            index == self.correctIndex ? self.correct() : self.incorrect()
-                        }) {
-                            Text("\(index == self.correctIndex ? self.questions[self.currentQuestion].answer :  self.questions[Int.random(in: 0...self.questionChoices.count)].answer) ")
-                        }
+            if inSettings {
+                Form {
+                    Section(header:
+                        Text("Choose Table")
+                            .font(.headline)) {
+                                
+                                Stepper(value: $tableToUse, in: 2...12) {
+                                    Text("Table: \(tableToUse)")
+                                }
+                    }
+                    
+                    Section(header:
+                        Text("Choose Question Amount")
+                            .font(.headline)) {
+                                
+                                Picker("Questions", selection: $selectedIndex) {
+                                    ForEach(0 ..< questionChoices.count) {
+                                        Text("\(self.questionChoices[$0])")
+                                    }
+                                }
+                                .pickerStyle(SegmentedPickerStyle())
+                                
+                                Text("Questions: \(questionChoices[selectedIndex])")
                     }
                 }
                 
-                Spacer()
+                GameButton(action: {
+                    self.startGame()
+                }, text: "Start Game")
+            }
+            else {
+                ZStack {
+                    //LinearGradient(gradient: Gradient(colors: [.red, .blue, .orange]), startPoint: .center, endPoint: .topTrailing)
+                    
+                    VStack {
+                        Text("\(questions[currentQuestion].text)")
+                            .frame(width: 1000, height: 100, alignment: .center)
+                            .clipShape(Capsule(style: .circular))
+                            .font(.largeTitle)
+                            .background(Color.blue)
+                            .foregroundColor(Color.white)
+                            
+                        
+                        Spacer()
+                        
+                        HStack(spacing: 65) {
+                            ForEach(questionRange, id: \.self) { index in
+
+                                GameButton(action: {
+                                    index == self.correctIndex ? self.correct() : self.incorrect()
+                                    
+                                }, text: "\(index == self.correctIndex ? self.questions[self.currentQuestion].answer :  self.generateWrongAnswer(correctIndex: self.correctIndex))")
+                            }
+                        }
+                    }
+                }
             }
         }
     }
     
-    func generateQuestions(tableValue: Int, index: Int) -> [Question] {
+    func startGame() {
+        // Generate Questions
         questions = []
-        let questionAmount: Int = Int(questionChoices[index]) ?? 5
+        let questionAmount: Int = Int(questionChoices[selectedIndex]) ?? 5
         for i in 1...questionAmount {
             questions.append(Question(text: "\(tableToUse) X \(i)", answer: i * tableToUse))
         }
-        return questions.shuffled()
+        questions.shuffle()
+        
+        // Start Game
+        askQuestion()
+        inSettings = false
     }
     
     func askQuestion() {
-        correctIndex = Int.random(in: 1...3)
+        correctIndex = Int.random(in: questionRange)
+        currentQuestion += 1
+        
+        if questions.count == currentQuestion {
+            self.gameOver()
+            self.inSettings = true
+        }
     }
     
     func correct() {
-        
+        print("correct")
+        askQuestion()
     }
     
     func incorrect() {
+        print("incorrect")
+    }
+    
+    func gameOver() {
+        print("game over!")
+    }
+    
+    func generateWrongAnswer(correctIndex: Int) -> Int {
+        let correctAnswer = self.questions[self.currentQuestion].answer
+
+        var wrongAnswer = self.questions[Int.random(in: 0...self.questionChoices.count)].answer
         
+        while wrongAnswer == correctAnswer {
+            wrongAnswer = self.questions[Int.random(in: 0...self.questionChoices.count)].answer
+        }
+        
+        return wrongAnswer
     }
 }
 
+// MARK: Views
+struct GameButton: View {
+    var action: () -> ()
+    var text: String
+    
+    var body: some View {
+        Button(action: {
+            self.action()
+        }) {
+            Text("\(text)")
+        }
+        .padding(10.0)
+        .background(Color.blue)
+        .foregroundColor(Color.white)
+        .clipShape(Capsule(style: .circular))
+    }
+}
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
