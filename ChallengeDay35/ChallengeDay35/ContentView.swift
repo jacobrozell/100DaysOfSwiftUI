@@ -129,7 +129,6 @@ struct SettingsForm: View {
                         self.makeButtons = false
                         })
                 }
-                .animation(.default)
             }
         }
     }
