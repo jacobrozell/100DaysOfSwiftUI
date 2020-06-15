@@ -13,6 +13,7 @@
 		36463FCA2491B6940015CE8A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36463FC92491B6940015CE8A /* Assets.xcassets */; };
 		36463FCD2491B6940015CE8A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36463FCC2491B6940015CE8A /* Preview Assets.xcassets */; };
 		36463FD02491B6940015CE8A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36463FCE2491B6940015CE8A /* LaunchScreen.storyboard */; };
+		36471D442497C96B00DF7843 /* Expense.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36471D432497C96B00DF7843 /* Expense.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		36463FCC2491B6940015CE8A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		36463FCF2491B6940015CE8A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		36463FD12491B6940015CE8A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		36471D432497C96B00DF7843 /* Expense.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expense.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 			children = (
 				36463FC32491B6930015CE8A /* AppDelegate.swift */,
 				36463FC52491B6930015CE8A /* SceneDelegate.swift */,
+				36471D432497C96B00DF7843 /* Expense.swift */,
 				36463FC72491B6930015CE8A /* ContentView.swift */,
 				36463FC92491B6940015CE8A /* Assets.xcassets */,
 				36463FCE2491B6940015CE8A /* LaunchScreen.storyboard */,
@@ -146,6 +149,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36471D442497C96B00DF7843 /* Expense.swift in Sources */,
 				36463FC42491B6930015CE8A /* AppDelegate.swift in Sources */,
 				36463FC62491B6930015CE8A /* SceneDelegate.swift in Sources */,
 				36463FC82491B6930015CE8A /* ContentView.swift in Sources */,

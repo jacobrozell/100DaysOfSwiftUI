@@ -10,18 +10,23 @@ import SwiftUI
 
 
 struct ContentView: View {
-    @State private var taps = UserDefaults.standard.integer(forKey: "taps")
+    @ObservedObject var expenses = Expenses()
+
     var body: some View {
-        VStack(spacing: 50) {
-            Text("Taps: \(taps)")
-                .font(.largeTitle)
-
-            Spacer()
-
-            Button("Tap Me") {
-                self.taps += 1
-                UserDefaults.standard.set(self.taps, forKey: "taps")
+        NavigationView {
+            List {
+                ForEach(expenses.items, id: \.name) { item in
+                    Text(item.name)
+                }
             }
+            .navigationBarTitle("iExpense")
+        .navigationBarItems(trailing:
+            Button(action: {
+                let expense = ExpenseItem(name: "Test", type: "Personal", amount: 5)
+                self.expenses.items.append(expense)
+            }) {
+                Image(systemName: "plus")
+            })
         }
     }
 }
