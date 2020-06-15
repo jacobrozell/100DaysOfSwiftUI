@@ -10,30 +10,19 @@ import SwiftUI
 
 
 struct ContentView: View {
-    @State private var numbers = [Int]()
-    @State private var currentNumber = 1
-
+    @State private var taps = UserDefaults.standard.integer(forKey: "taps")
     var body: some View {
-        NavigationView {
-            VStack {
-                List {
-                    ForEach(numbers, id: \.self) {
-                        Text("\($0)")
-                    }
-                .onDelete(perform: removeRows)
-                }
+        VStack(spacing: 50) {
+            Text("Taps: \(taps)")
+                .font(.largeTitle)
 
-                Button("Add Number") {
-                    self.numbers.append(self.currentNumber)
-                    self.currentNumber += 1
-                }
+            Spacer()
+
+            Button("Tap Me") {
+                self.taps += 1
+                UserDefaults.standard.set(self.taps, forKey: "taps")
             }
-        .navigationBarItems(leading: EditButton())
         }
-    }
-
-    func removeRows(at offsets: IndexSet) {
-        numbers.remove(atOffsets: offsets)
     }
 }
 
