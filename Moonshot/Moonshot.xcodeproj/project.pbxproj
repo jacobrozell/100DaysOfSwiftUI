@@ -17,6 +17,7 @@
 		36211866249A6C8300D044B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36211865249A6C8300D044B0 /* Assets.xcassets */; };
 		36211868249A6CDA00D044B0 /* Astronaut.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36211867249A6CDA00D044B0 /* Astronaut.swift */; };
 		3621186A249A6D2E00D044B0 /* Bundle-Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36211869249A6D2E00D044B0 /* Bundle-Decodable.swift */; };
+		3621186C249A6F1200D044B0 /* Mission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3621186B249A6F1200D044B0 /* Mission.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		36211865249A6C8300D044B0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		36211867249A6CDA00D044B0 /* Astronaut.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Astronaut.swift; sourceTree = "<group>"; };
 		36211869249A6D2E00D044B0 /* Bundle-Decodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle-Decodable.swift"; sourceTree = "<group>"; };
+		3621186B249A6F1200D044B0 /* Mission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mission.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 			children = (
 				3621184D249A640200D044B0 /* AppDelegate.swift */,
 				36211867249A6CDA00D044B0 /* Astronaut.swift */,
+				3621186B249A6F1200D044B0 /* Mission.swift */,
 				3621184F249A640200D044B0 /* SceneDelegate.swift */,
 				36211851249A640200D044B0 /* ContentView.swift */,
 				36211858249A640300D044B0 /* LaunchScreen.storyboard */,
@@ -160,6 +163,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3621186C249A6F1200D044B0 /* Mission.swift in Sources */,
 				3621184E249A640200D044B0 /* AppDelegate.swift in Sources */,
 				36211850249A640200D044B0 /* SceneDelegate.swift in Sources */,
 				3621186A249A6D2E00D044B0 /* Bundle-Decodable.swift in Sources */,
