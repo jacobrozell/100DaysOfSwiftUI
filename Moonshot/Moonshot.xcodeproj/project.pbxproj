@@ -76,8 +76,8 @@
 				3621185B249A640300D044B0 /* Info.plist */,
 				36211862249A6C3500D044B0 /* astronauts.json */,
 				36211861249A6C3500D044B0 /* missions.json */,
-				36211855249A640300D044B0 /* Preview Content */,
 				36211869249A6D2E00D044B0 /* Bundle-Decodable.swift */,
+				36211855249A640300D044B0 /* Preview Content */,
 			);
 			path = Moonshot;
 			sourceTree = "<group>";
