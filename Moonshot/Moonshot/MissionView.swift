@@ -39,11 +39,18 @@ struct MissionView: View {
                             Image(crewMember.astronaut.id)
                                 .resizable()
                                 .frame(width: 83, height: 60)
-                                .clipShape(Capsule())
-                                .overlay(
-                                    Capsule()
-                                        .stroke(Color.primary, lineWidth: 1)
-                                )
+
+                                // RoundedRectangle
+                                .clipShape(RoundedRectangle(cornerRadius: 16))
+                                .overlay(RoundedRectangle(cornerRadius: 16)
+                                    .stroke(Color.primary, lineWidth: 1))
+
+                                // Capsule
+//                                .clipShape(Capsule())
+//                                .overlay(
+//                                    Capsule()
+//                                        .stroke(Color.primary, lineWidth: 1)
+//                                )
 
                             VStack(alignment: .leading) {
                                 Text(crewMember.astronaut.name)
