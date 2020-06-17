@@ -10,15 +10,10 @@ import SwiftUI
 
 
 struct ContentView: View {
+    let astronauts = Bundle.main.decode("astronauts.json")
+
     var body: some View {
-        NavigationView {
-            List(0..<100) { row in
-                NavigationLink(destination: Text("Detail \(row)")) {
-                    Text("Row \(row)")
-                }
-            }
-            .navigationBarTitle("SwiftUI")
-        }
+        Text("\(astronauts.count)")
     }
 }
 
