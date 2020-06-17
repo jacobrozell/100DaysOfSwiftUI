@@ -25,18 +25,13 @@ struct AstronautView: View {
 
                     Text(self.astronaut.description)
                         .padding()
-
-                    Text("Missions")
-                        .padding()
-                        .font(.headline)
-                        .frame(alignment: .leading)
+                        .layoutPriority(1)
 
                     ForEach(self.pastMissions, id: \.id) { mission in
                         HStack {
                             Image(mission.image)
                                 .resizable()
                                 .frame(width: 100, height: 100)
-                                .clipShape(Capsule())
 
                             VStack(alignment: .leading) {
                                 Text(mission.displayName)
