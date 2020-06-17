@@ -40,4 +40,12 @@ struct Mission: Codable, Identifiable {
             return "N/A"
         }
     }
+
+    var crewIds: [String] {
+        var ids = [String]()
+        for member in crew {
+            ids.append(member.name)
+        }
+        return ids
+    }
 }
