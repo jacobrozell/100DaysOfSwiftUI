@@ -30,7 +30,7 @@ struct ContentView: View {
                     }
                 }
                 .onDelete(perform: removeItems)
-            }
+            }  
             .navigationBarTitle("iExpense")
             .navigationBarItems(trailing:
                 Button(action: {
