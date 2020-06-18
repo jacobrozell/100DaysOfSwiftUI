@@ -14,6 +14,7 @@ struct AddView: View {
     @State private var name = ""
     @State private var type = "Personal"
     @State private var amount = ""
+    @State private var showError = false
     static let types = ["Business", "Peronsal"]
 
     var body: some View {
@@ -37,8 +38,13 @@ struct AddView: View {
                     let item = ExpenseItem(name: self.name, type: self.type, amount: actualAmount)
                     self.expenses.items.append(item)
                     self.presentationMode.wrappedValue.dismiss()
+                } else {
+                    self.showError = true
                 }
             })
+                .alert(isPresented: $showError) {
+                    Alert(title: Text("Error!"), message: Text("Please fill out all fields or check that amount is a number!"), dismissButton: .default(Text("Dismiss")))
+            }
         }
     }
 }

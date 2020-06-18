@@ -26,8 +26,18 @@ struct ContentView: View {
                         }
 
                         Spacer()
-                        Text("$\(item.amount)")
-                            .foregroundColor(item.amount > 10 ? .red : .blue)
+                        
+                        if (0..<10).contains(item.amount) {
+                            Text("$\(item.amount)")
+                            .foregroundColor(.green)
+                        } else if (10..<100).contains(item.amount) {
+                            Text("$\(item.amount)")
+                            .foregroundColor(.blue)
+                        } else {
+                            Text("$\(item.amount)")
+                            .foregroundColor(.red)
+                        }
+
                     }
                 }
                 .onDelete(perform: removeItems)
