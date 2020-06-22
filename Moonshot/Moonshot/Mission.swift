@@ -9,8 +9,7 @@
 import Foundation
 
 struct Mission: Codable, Identifiable {
-
-    // Internal Struct
+    
     struct CrewRole: Codable {
         let name: String
         let role: String
