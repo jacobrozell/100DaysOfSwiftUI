@@ -8,46 +8,36 @@
 
 import SwiftUI
 
-struct ColorCyclingCircle: View {
-    var amount = 0.0
-    var steps = 100
-
-    var body: some View {
-        ZStack {
-            ForEach(0..<steps) { value in
-                Circle()
-                    .inset(by: CGFloat(value))
-                    .strokeBorder(LinearGradient(gradient: Gradient(colors: [
-                        self.color(for: value, brightness: 1),
-                        self.color(for: value, brightness: 0.5)
-                    ]), startPoint: .top, endPoint: .bottom), lineWidth: 2)
-            }
-        }
-        .drawingGroup()
+struct Trapezoid: Shape {
+    var insetAmount: CGFloat
+    var animatableData: CGFloat {
+        get { insetAmount }
+        set { self.insetAmount = newValue }
     }
 
-    func color(for value: Int, brightness: Double) -> Color {
-        var targetHue = Double(value) / Double(self.steps) + self.amount
+    func path(in rect: CGRect) -> Path {
+        var path = Path()
 
-        if targetHue > 1 {
-            targetHue -= 1
-        }
+        path.move(to: CGPoint(x: 0, y: rect.maxY))
+        path.addLine(to: CGPoint(x: insetAmount, y: rect.minY))
+        path.addLine(to: CGPoint(x: rect.maxX - insetAmount, y: rect.minY))
+        path.addLine(to: CGPoint(x: rect.maxX, y: rect.maxY))
+        path.addLine(to: CGPoint(x: 0, y: rect.maxY))
 
-        return Color(hue: targetHue, saturation: 1, brightness: brightness)
+        return path
     }
 }
 
 struct ContentView: View {
-    @State private var colorCycle = 0.0
-
+    @State private var insetAmount: CGFloat = 50
     var body: some View {
-        VStack {
-
-            ColorCyclingCircle(amount: self.colorCycle)
-                .frame(width: 300, height: 300)
-
-            Slider(value: $colorCycle)
-        }
+        Trapezoid(insetAmount: insetAmount)
+            .frame(width: 200, height: 100)
+            .onTapGesture {
+                withAnimation {
+                    self.insetAmount = CGFloat.random(in: 10...90)
+                }
+            }
     }
 }
 
