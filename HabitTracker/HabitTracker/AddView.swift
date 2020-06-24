@@ -23,26 +23,23 @@ struct AddView: View {
     var body: some View {
         NavigationView {
                 VStack {
+                    Spacer().frame(minWidth: 15, idealWidth: 15, maxWidth: 20, minHeight: 15, idealHeight: 10, maxHeight: 10)
+
                     VStack(alignment: .leading) {
                         TextField("Title", text: $title)
                             .textFieldStyle(RoundedBorderTextFieldStyle())
-                            .padding(.leading, 10)
-                            .padding(.trailing, 10)
+                            .padding(.horizontal, 10)
 
                         TextField("Description", text: $desc)
                             .textFieldStyle(RoundedBorderTextFieldStyle())
-                            .padding(.leading, 10)
-                            .padding(.trailing, 10)
+                            .padding(.horizontal, 10)
 
                         Stepper("Times Completed: \(completedCount)", value: $completedCount, in: 0...100)
-                        .padding(.leading, 10)
-                        .padding(.trailing, 10)
+                            .padding(.horizontal, 10)
 
                         Stepper("Goal: \(completedGoal)", value: $completedGoal, in: 1...100)
-                        .padding(.leading, 10)
-                        .padding(.trailing, 10)
+                            .padding(.horizontal, 10)
                     }
-
 
                     Spacer()
 

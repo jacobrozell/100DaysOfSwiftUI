@@ -77,7 +77,6 @@ struct ContentView: View {
                     .modifier(makeCircle(padding: 8, cornerRadius: 20))
             })
 
-
             // Sheet
             .sheet(isPresented: $showingAddView) {
                 AddView(storage: self.storage)
