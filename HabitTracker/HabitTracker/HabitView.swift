@@ -13,18 +13,23 @@ struct HabitView: View {
     var activity: Activity
 
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            Text("\(activity.title)")
+
+            Text("\(activity.description)")
+
+            Text("\(activity.completedCount)")
+
+            Text("\(activity.completedGoal)")
+
+            Spacer()
+        }
     }
 }
 
 struct HabitView_Previews: PreviewProvider {
     static var previews: some View {
-        HabitView(storage: ActivityStorage(activities: [
-            Activity(
-                title: "Ride Bike",
-                description: "Just a couple miles",
-                completedCount: 0)]),
-          activity:
+        HabitView(storage: ActivityStorage(), activity:
             Activity(
                 title: "Ride Bike",
                 description: "Just a couple miles",

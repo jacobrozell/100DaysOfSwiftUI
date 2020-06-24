@@ -13,65 +13,66 @@ struct AddView: View {
     @ObservedObject var storage: ActivityStorage
     @State private var title = ""
     @State private var desc = ""
-    @State private var count = 0
+    @State private var completedCount = 0
+    @State private var completedGoal = 1
 
     init(storage: ActivityStorage) {
         self.storage = storage
     }
 
     var body: some View {
-        Form {
-            VStack {
-                Text("Add Activity")
-                    .font(.largeTitle)
+        NavigationView {
+                VStack {
+                    VStack(alignment: .leading) {
+                        TextField("Title", text: $title)
+                            .textFieldStyle(RoundedBorderTextFieldStyle())
+                            .padding(.leading, 10)
+                            .padding(.trailing, 10)
 
-                Section {
-                    TextField("Title", text: $title)
-                        .padding()
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                        TextField("Description", text: $desc)
+                            .textFieldStyle(RoundedBorderTextFieldStyle())
+                            .padding(.leading, 10)
+                            .padding(.trailing, 10)
+
+                        Stepper("Times Completed: \(completedCount)", value: $completedCount, in: 0...100)
+                        .padding(.leading, 10)
+                        .padding(.trailing, 10)
+
+                        Stepper("Goal: \(completedGoal)", value: $completedGoal, in: 1...100)
+                        .padding(.leading, 10)
+                        .padding(.trailing, 10)
+                    }
+
+
+                    Spacer()
+
+                    Button(action: {
+                        // Add activity
+                        self.storage.activities.append(
+                            Activity(
+                                title: self.title,
+                                description: self.desc,
+                                completedCount: self.completedCount,
+                                completedGoal: self.completedGoal)
+                        )
+
+                        // Dismiss AddView
+                        self.presentationMode.wrappedValue.dismiss()
+                    }) {
+                        Text("Add Habit")
+                            .padding()
+                            .background(Color.blue)
+                            .foregroundColor(.white)
+                            .cornerRadius(16)
+                    }
                 }
-
-                Section {
-                    TextField("Description", text: $desc)
-                        .padding()
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                }
-
-//                Section {
-//                    Text("Activity Count")
-//                    // add some sort of picker?
-//                }
-
-                Spacer()
-
-                Button(action: {
-                    // Add activity
-                    self.storage.activities.append(
-                        Activity(
-                            title: self.title,
-                            description: self.desc,
-                            completedCount: self.count)
-                    )
-
-                    // Dismiss AddView
-                    self.presentationMode.wrappedValue.dismiss()
-                }) {
-                    Text("Add Habit")
-                        .padding()
-
-                }
-            }
+            .navigationBarTitle("Add Activity")
         }
     }
 }
 
 struct AddView_Previews: PreviewProvider {
     static var previews: some View {
-        AddView(storage: ActivityStorage(activities: [
-            Activity(
-                title: "Ride Bike",
-                description: "Just a couple miles",
-                completedCount: 0)
-        ]))
+        AddView(storage: ActivityStorage())
     }
 }
