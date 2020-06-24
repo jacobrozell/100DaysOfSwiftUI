@@ -16,11 +16,10 @@ struct CellView: View {
 
     var body: some View {
         NavigationLink(destination: HabitView(storage: self.storage, activity: activity)) {
-            HStack {
 
+            HStack {
                 Text(activity.title)
                     .font(.headline)
-                    .fontWeight(.bold)
 
                 Spacer()
 
@@ -30,6 +29,21 @@ struct CellView: View {
                 }
             }
         }
+    }
+}
+
+// MARK: Custom Modifiers
+struct makeCircle: ViewModifier {
+    var padding: CGFloat = 12
+    var cornerRadius: CGFloat = 16
+
+    func body(content: Content) -> some View {
+        content
+            .padding(.all, padding)
+            .background(Color.blue)
+            .foregroundColor(.white)
+            .cornerRadius(cornerRadius)
+            .clipped()
     }
 }
 
@@ -53,20 +67,16 @@ struct ContentView: View {
             .navigationBarTitle("My Habits")
 
             .navigationBarItems(
-                leading: EditButton()
-                    .padding(.all, 6)
-                    .background(Color.blue)
-                    .foregroundColor(.white)
-                    .cornerRadius(28),
-                trailing: Button(action: {
-                    self.showingAddView = true
-                }) {
-                    Image(systemName: "plus")
-                        .padding(.all, 10)
-                        .background(Color.blue)
-                        .foregroundColor(.white)
-                        .cornerRadius(16)
-                })
+            leading: EditButton()
+                .modifier(makeCircle(padding: 6, cornerRadius: 12)),
+
+            trailing: Button(action: {
+                self.showingAddView = true
+            }) {
+                Image(systemName: "plus")
+                    .modifier(makeCircle(padding: 8, cornerRadius: 20))
+            })
+
 
             // Sheet
             .sheet(isPresented: $showingAddView) {
