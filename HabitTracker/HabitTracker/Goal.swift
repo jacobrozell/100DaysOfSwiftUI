@@ -9,20 +9,30 @@
 import Foundation
 import SwiftUI
 
-struct Activity: Codable, Identifiable {
-    var id = UUID()
+enum GoalType: String, Codable {
+    case reoccuring
+    case oneAndDone
+}
+
+struct Goal: Codable, Identifiable {
+    let id = UUID()
     var title: String
     var description: String
+    var goalType: GoalType = .reoccuring
+
+    // Reocurring
     var completedCount: Int = 0
     var completedGoal: Int = 1
-
     var progress: Double {
         return Double(completedCount / completedGoal)
     }
+
+    // One and Done / Daily / Weekly
+    var completed: Bool = false
 }
 
 class ActivityStorage: ObservableObject {
-    @Published var activities = [Activity]() {
+    @Published var activities = [Goal]() {
         didSet {
             let encoder = JSONEncoder()
 
@@ -36,7 +46,7 @@ class ActivityStorage: ObservableObject {
         if let json = UserDefaults.standard.data(forKey: "Activities") {
             let decoder = JSONDecoder()
 
-            if let decoded = try? decoder.decode([Activity].self, from: json) {
+            if let decoded = try? decoder.decode([Goal].self, from: json) {
                 self.activities = decoded
                 return
             }

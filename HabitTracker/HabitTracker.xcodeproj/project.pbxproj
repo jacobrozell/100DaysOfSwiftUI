@@ -7,18 +7,28 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		366AB80F24A463E000D4BEB4 /* AddSingleGoal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366AB80E24A463E000D4BEB4 /* AddSingleGoal.swift */; };
+		366AB81124A46A3100D4BEB4 /* Cells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366AB81024A46A3100D4BEB4 /* Cells.swift */; };
+		366AB81324A46A5D00D4BEB4 /* GoalSubmenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366AB81224A46A5D00D4BEB4 /* GoalSubmenu.swift */; };
+		366AB81524A46A9300D4BEB4 /* Modifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366AB81424A46A9300D4BEB4 /* Modifiers.swift */; };
+		366AB81824A46B3D00D4BEB4 /* SingleGoalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366AB81724A46B3D00D4BEB4 /* SingleGoalView.swift */; };
 		36C25A0824A39E3B0076B716 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C25A0724A39E3B0076B716 /* AppDelegate.swift */; };
 		36C25A0A24A39E3B0076B716 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C25A0924A39E3B0076B716 /* SceneDelegate.swift */; };
 		36C25A0C24A39E3B0076B716 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C25A0B24A39E3B0076B716 /* ContentView.swift */; };
 		36C25A0E24A39E3C0076B716 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36C25A0D24A39E3C0076B716 /* Assets.xcassets */; };
 		36C25A1124A39E3C0076B716 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36C25A1024A39E3C0076B716 /* Preview Assets.xcassets */; };
 		36C25A1424A39E3C0076B716 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36C25A1224A39E3C0076B716 /* LaunchScreen.storyboard */; };
-		36C25A1C24A3A8810076B716 /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C25A1B24A3A8810076B716 /* AddView.swift */; };
-		36C25A1E24A3A8FB0076B716 /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C25A1D24A3A8FB0076B716 /* Activity.swift */; };
-		36C25A2024A3A9EB0076B716 /* HabitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C25A1F24A3A9EB0076B716 /* HabitView.swift */; };
+		36C25A1C24A3A8810076B716 /* AddReoccurringGoalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C25A1B24A3A8810076B716 /* AddReoccurringGoalView.swift */; };
+		36C25A1E24A3A8FB0076B716 /* Goal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C25A1D24A3A8FB0076B716 /* Goal.swift */; };
+		36C25A2024A3A9EB0076B716 /* ReoccurringGoalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C25A1F24A3A9EB0076B716 /* ReoccurringGoalView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		366AB80E24A463E000D4BEB4 /* AddSingleGoal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSingleGoal.swift; sourceTree = "<group>"; };
+		366AB81024A46A3100D4BEB4 /* Cells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cells.swift; sourceTree = "<group>"; };
+		366AB81224A46A5D00D4BEB4 /* GoalSubmenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalSubmenu.swift; sourceTree = "<group>"; };
+		366AB81424A46A9300D4BEB4 /* Modifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modifiers.swift; sourceTree = "<group>"; };
+		366AB81724A46B3D00D4BEB4 /* SingleGoalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleGoalView.swift; sourceTree = "<group>"; };
 		36C25A0424A39E3B0076B716 /* HabitTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HabitTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		36C25A0724A39E3B0076B716 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		36C25A0924A39E3B0076B716 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -27,9 +37,9 @@
 		36C25A1024A39E3C0076B716 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		36C25A1324A39E3C0076B716 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		36C25A1524A39E3C0076B716 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		36C25A1B24A3A8810076B716 /* AddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddView.swift; sourceTree = "<group>"; };
-		36C25A1D24A3A8FB0076B716 /* Activity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
-		36C25A1F24A3A9EB0076B716 /* HabitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitView.swift; sourceTree = "<group>"; };
+		36C25A1B24A3A8810076B716 /* AddReoccurringGoalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReoccurringGoalView.swift; sourceTree = "<group>"; };
+		36C25A1D24A3A8FB0076B716 /* Goal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Goal.swift; sourceTree = "<group>"; };
+		36C25A1F24A3A9EB0076B716 /* ReoccurringGoalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReoccurringGoalView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +53,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		366AB81624A46AFF00D4BEB4 /* AddViews */ = {
+			isa = PBXGroup;
+			children = (
+				36C25A1B24A3A8810076B716 /* AddReoccurringGoalView.swift */,
+				366AB80E24A463E000D4BEB4 /* AddSingleGoal.swift */,
+			);
+			path = AddViews;
+			sourceTree = "<group>";
+		};
+		366AB81924A46B7F00D4BEB4 /* DetailViews */ = {
+			isa = PBXGroup;
+			children = (
+				36C25A1F24A3A9EB0076B716 /* ReoccurringGoalView.swift */,
+				366AB81724A46B3D00D4BEB4 /* SingleGoalView.swift */,
+			);
+			path = DetailViews;
+			sourceTree = "<group>";
+		};
 		36C259FB24A39E3B0076B716 = {
 			isa = PBXGroup;
 			children = (
@@ -62,12 +90,15 @@
 		36C25A0624A39E3B0076B716 /* HabitTracker */ = {
 			isa = PBXGroup;
 			children = (
+				366AB81424A46A9300D4BEB4 /* Modifiers.swift */,
 				36C25A0724A39E3B0076B716 /* AppDelegate.swift */,
 				36C25A0924A39E3B0076B716 /* SceneDelegate.swift */,
+				366AB81024A46A3100D4BEB4 /* Cells.swift */,
 				36C25A0B24A39E3B0076B716 /* ContentView.swift */,
-				36C25A1F24A3A9EB0076B716 /* HabitView.swift */,
-				36C25A1D24A3A8FB0076B716 /* Activity.swift */,
-				36C25A1B24A3A8810076B716 /* AddView.swift */,
+				36C25A1D24A3A8FB0076B716 /* Goal.swift */,
+				366AB81224A46A5D00D4BEB4 /* GoalSubmenu.swift */,
+				366AB81924A46B7F00D4BEB4 /* DetailViews */,
+				366AB81624A46AFF00D4BEB4 /* AddViews */,
 				36C25A0D24A39E3C0076B716 /* Assets.xcassets */,
 				36C25A1224A39E3C0076B716 /* LaunchScreen.storyboard */,
 				36C25A1524A39E3C0076B716 /* Info.plist */,
@@ -155,11 +186,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				36C25A1E24A3A8FB0076B716 /* Activity.swift in Sources */,
-				36C25A1C24A3A8810076B716 /* AddView.swift in Sources */,
+				366AB81824A46B3D00D4BEB4 /* SingleGoalView.swift in Sources */,
+				36C25A1E24A3A8FB0076B716 /* Goal.swift in Sources */,
+				366AB81324A46A5D00D4BEB4 /* GoalSubmenu.swift in Sources */,
+				366AB81124A46A3100D4BEB4 /* Cells.swift in Sources */,
+				36C25A1C24A3A8810076B716 /* AddReoccurringGoalView.swift in Sources */,
+				366AB81524A46A9300D4BEB4 /* Modifiers.swift in Sources */,
 				36C25A0824A39E3B0076B716 /* AppDelegate.swift in Sources */,
-				36C25A2024A3A9EB0076B716 /* HabitView.swift in Sources */,
+				36C25A2024A3A9EB0076B716 /* ReoccurringGoalView.swift in Sources */,
 				36C25A0A24A39E3B0076B716 /* SceneDelegate.swift in Sources */,
+				366AB80F24A463E000D4BEB4 /* AddSingleGoal.swift in Sources */,
 				36C25A0C24A39E3B0076B716 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct AddView: View {
+struct AddReoccurringGoalView: View {
     @Environment(\.presentationMode) var presentationMode
     @ObservedObject var storage: ActivityStorage
     @State private var title = ""
@@ -23,7 +23,7 @@ struct AddView: View {
     var body: some View {
         NavigationView {
                 VStack {
-                    Spacer().frame(minWidth: 15, idealWidth: 15, maxWidth: 20, minHeight: 15, idealHeight: 10, maxHeight: 10)
+                    Divider()
 
                     VStack(alignment: .leading) {
                         TextField("Title", text: $title)
@@ -46,9 +46,10 @@ struct AddView: View {
                     Button(action: {
                         // Add activity
                         self.storage.activities.append(
-                            Activity(
+                            Goal(
                                 title: self.title,
                                 description: self.desc,
+                                goalType: .reoccuring,
                                 completedCount: self.completedCount,
                                 completedGoal: self.completedGoal)
                         )
@@ -56,20 +57,22 @@ struct AddView: View {
                         // Dismiss AddView
                         self.presentationMode.wrappedValue.dismiss()
                     }) {
-                        Text("Add Habit")
+                        Text("Add Goal")
                             .padding()
                             .background(Color.blue)
                             .foregroundColor(.white)
                             .cornerRadius(16)
                     }
+
+                    Divider()
                 }
-            .navigationBarTitle("Add Activity")
+            .navigationBarTitle("Add Goal")
         }
     }
 }
 
 struct AddView_Previews: PreviewProvider {
     static var previews: some View {
-        AddView(storage: ActivityStorage())
+        AddReoccurringGoalView(storage: ActivityStorage())
     }
 }
