@@ -17,7 +17,7 @@ struct ReoccurringGoalView: View {
             Text("\(activity.title)")
                 .font(.largeTitle)
                 .fontWeight(.semibold)
-                .frame(width: UIScreen.main.bounds.width/1.25)
+                .frame(width: UIScreen.main.bounds.width/2)
                 .padding(.horizontal, 100)
                 .lineLimit(3)
 
@@ -25,12 +25,17 @@ struct ReoccurringGoalView: View {
             
             // Card View -> Progress View
             VStack {
-                Text("You've completed this \(activity.completedCount) times!")
+                Text("Completion Count: \(activity.completedCount)")
                     .fontWeight(.bold)
                     .font(.title)
                     .foregroundColor(.primary)
 
-                Text("Hello")
+                Text("Completion Goal: \(activity.completedGoal)")
+                    .fontWeight(.bold)
+                    .font(.title)
+                    .foregroundColor(.primary)
+
+                // Progress Bar Here
 
             }
             .padding()

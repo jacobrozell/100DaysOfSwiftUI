@@ -24,7 +24,7 @@ struct SingleGoalView: View {
             Text("\(goal.title)")
                 .font(.largeTitle)
                 .fontWeight(.semibold)
-                .frame(width: UIScreen.main.bounds.width/1.25)
+                .frame(width: UIScreen.main.bounds.width/2)
                 .padding(.horizontal, 100)
                 .lineLimit(3)
 
