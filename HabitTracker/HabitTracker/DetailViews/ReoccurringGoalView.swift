@@ -22,6 +22,8 @@ struct ReoccurringGoalView: View {
                 .lineLimit(3)
 
             Divider()
+
+            Text(activity.description)
             
             // Card View -> Progress View
             VStack {
@@ -43,10 +45,6 @@ struct ReoccurringGoalView: View {
                 RoundedRectangle(cornerRadius: 20)
                     .stroke(Color.secondary, lineWidth: 5)
             )
-
-            Spacer()
-
-            Text(activity.description)
 
             Spacer()
         }

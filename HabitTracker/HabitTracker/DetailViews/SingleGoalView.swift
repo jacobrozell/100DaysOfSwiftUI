@@ -10,8 +10,8 @@ import SwiftUI
 
 struct SingleGoalView: View {
     @ObservedObject var storage: ActivityStorage
-    var goal: Goal
     @State private var completed = false
+    var goal: Goal
 
     init(storage: ActivityStorage, goal: Goal) {
         self.storage = storage
