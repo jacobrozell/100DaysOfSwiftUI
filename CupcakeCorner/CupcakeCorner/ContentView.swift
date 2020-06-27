@@ -9,38 +9,47 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var username = ""
-    @State private var email = ""
-
-    var disabledForm: Bool {
-        username.count < 7 || !isValidEmail(email)
-    }
+    @ObservedObject var order = Order()
 
     var body: some View {
-        Form {
-            Section {
-                TextField("Username", text: $username)
-                TextField("Email", text: $email)
-            }
+        NavigationView {
+            Form {
+                Section {
+                    Picker("Select your cake type", selection: $order.type) {
+                        ForEach(0..<Order.types.count, id: \.self) {
+                            Text(Order.types[$0])
+                        }
+                    }
 
-            Section {
-                Button("Create Account") {
-                    print("Creating account...")
+                    Stepper(value: $order.quantity, in: 3...20) {
+                        Text("Number of cakes: \(order.quantity)")
+                    }
+                }
+
+                Section {
+                    Toggle(isOn: $order.sepcialRequestEnabled.animation()) {
+                        Text("Any special reuests?")
+                    }
+
+                    if order.sepcialRequestEnabled {
+                        Toggle(isOn: $order.extraFrosting) {
+                            Text("Add extra frosting")
+                        }
+
+                        Toggle(isOn: $order.addSprinkles) {
+                            Text("Add extra sprinkles")
+                        }
+                    }
+                }
+
+                Section {
+                    NavigationLink(destination: AddressView(order: order)) {
+                        Text("Delivery details")
+                    }
                 }
             }
-            .disabled(disabledForm)
+        .navigationBarTitle("CupcakeCorner")
         }
-    }
-
-    func isValidEmail(_ email: String) -> Bool {
-        if email.isEmpty {
-            return false
-        }
-
-        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
-
-        let emailPred = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
-        return emailPred.evaluate(with: email)
     }
 
 }
