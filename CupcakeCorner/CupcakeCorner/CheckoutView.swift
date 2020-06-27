@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct CheckoutView: View {
-    @ObservedObject var order: Order
+    @ObservedObject var orderStorage: OrderStorage
     @State private var alertTitle = ""
     @State private var alertMessage = ""
     @State private var showingAlert = false
@@ -24,7 +24,7 @@ struct CheckoutView: View {
                         .scaledToFit()
                         .frame(width: geo.size.width)
 
-                    Text("Your total is $\(self.order.cost, specifier: "%.2f")")
+                    Text("Your total is $\(self.orderStorage.order.cost, specifier: "%.2f")")
                         .font(.title)
 
                     Button("Place order") {
@@ -42,7 +42,7 @@ struct CheckoutView: View {
 
     func placeOrder() {
         // encode to data
-        guard let encoded = try? JSONEncoder().encode(order) else {
+        guard let encoded = try? JSONEncoder().encode(orderStorage) else {
             print("Failed to encode order")
             return
         }
@@ -63,22 +63,20 @@ struct CheckoutView: View {
                 return
             }
 
-            if let decodedOrder = try? JSONDecoder().decode(Order.self, from: data) {
+            if let decodedOrder = try? JSONDecoder().decode(OrderStorage.self, from: data) {
                 self.alertTitle = "Thank you!"
-                self.alertMessage = "Your order for \(decodedOrder.quantity)x \(Order.types[decodedOrder.type].lowercased()) cupcakes is on its way!"
+                self.alertMessage = "Your order for \(decodedOrder.order.quantity)x \(OrderStorage.Order.types[decodedOrder.order.type].lowercased()) cupcakes is on its way!"
                 self.showingAlert = true
             } else {
                 print("Invalid response from the server")
             }
 
         }.resume()
-
-
     }
 }
 
 struct CheckoutView_Previews: PreviewProvider {
     static var previews: some View {
-        CheckoutView(order: Order())
+        CheckoutView(orderStorage: OrderStorage())
     }
 }

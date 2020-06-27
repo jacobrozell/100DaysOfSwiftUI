@@ -9,41 +9,41 @@
 import SwiftUI
 
 struct ContentView: View {
-    @ObservedObject var order = Order()
+    @ObservedObject var orderStorage = OrderStorage()
 
     var body: some View {
         NavigationView {
             Form {
                 Section {
-                    Picker("Select your cake type", selection: $order.type) {
-                        ForEach(0..<Order.types.count, id: \.self) {
-                            Text(Order.types[$0])
+                    Picker("Select your cake type", selection: $orderStorage.order.type) {
+                        ForEach(0..<OrderStorage.Order.types.count, id: \.self) {
+                            Text(OrderStorage.Order.types[$0])
                         }
                     }
 
-                    Stepper(value: $order.quantity, in: 3...20) {
-                        Text("Number of cakes: \(order.quantity)")
+                    Stepper(value: $orderStorage.order.quantity, in: 3...20) {
+                        Text("Number of cakes: \(orderStorage.order.quantity)")
                     }
                 }
 
                 Section {
-                    Toggle(isOn: $order.sepcialRequestEnabled.animation()) {
+                    Toggle(isOn: $orderStorage.order.sepcialRequestEnabled.animation()) {
                         Text("Any special reuests?")
                     }
 
-                    if order.sepcialRequestEnabled {
-                        Toggle(isOn: $order.extraFrosting) {
+                    if orderStorage.order.sepcialRequestEnabled {
+                        Toggle(isOn: $orderStorage.order.extraFrosting) {
                             Text("Add extra frosting")
                         }
 
-                        Toggle(isOn: $order.addSprinkles) {
+                        Toggle(isOn: $orderStorage.order.addSprinkles) {
                             Text("Add extra sprinkles")
                         }
                     }
                 }
 
                 Section {
-                    NavigationLink(destination: AddressView(order: order)) {
+                    NavigationLink(destination: AddressView(orderStorage: orderStorage)) {
                         Text("Delivery details")
                     }
                 }

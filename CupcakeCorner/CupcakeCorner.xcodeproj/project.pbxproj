@@ -64,8 +64,8 @@
 			children = (
 				367D298C24A7A41B00443C76 /* AppDelegate.swift */,
 				367D298E24A7A41B00443C76 /* SceneDelegate.swift */,
-				367D299024A7A41B00443C76 /* ContentView.swift */,
 				367D29A424A7C8AC00443C76 /* Order.swift */,
+				367D299024A7A41B00443C76 /* ContentView.swift */,
 				367D29A024A7C7F300443C76 /* AddressView.swift */,
 				367D29A224A7C87B00443C76 /* CheckoutView.swift */,
 				367D299224A7A41B00443C76 /* Assets.xcassets */,

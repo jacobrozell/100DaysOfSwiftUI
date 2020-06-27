@@ -13,22 +13,23 @@ struct Address {
 }
 
 struct AddressView: View {
-    @ObservedObject var order: Order
+    @ObservedObject var orderStorage: OrderStorage
+    
     var body: some View {
         Form {
             Section {
-                TextField("Name", text: $order.name)
-                TextField("Street Address", text: $order.streetAddress)
-                TextField("City", text: $order.city)
-                TextField("Zip", text: $order.zip)
+                TextField("Name", text: $orderStorage.order.name)
+                TextField("Street Address", text: $orderStorage.order.streetAddress)
+                TextField("City", text: $orderStorage.order.city)
+                TextField("Zip", text: $orderStorage.order.zip)
             }
 
             Section {
-                NavigationLink(destination: CheckoutView(order: order)) {
+                NavigationLink(destination: CheckoutView(orderStorage: orderStorage)) {
                     Text("Check out")
                 }
             }
-            .disabled(!order.hasValidAddress)
+            .disabled(!orderStorage.order.hasValidAddress)
         }
         .navigationBarTitle("Delivery details", displayMode: .inline)
     }
@@ -36,6 +37,6 @@ struct AddressView: View {
 
 struct AddressView_Previews: PreviewProvider {
     static var previews: some View {
-        AddressView(order: Order())
+        AddressView(orderStorage: OrderStorage())
     }
 }
