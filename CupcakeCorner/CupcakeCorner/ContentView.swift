@@ -8,57 +8,41 @@
 
 import SwiftUI
 
-struct Response: Codable {
-    var results: [Result]
-}
-
-struct Result: Codable {
-    var trackId: Int
-    var trackName: String
-    var collectionName: String
-}
-
 struct ContentView: View {
-    @State private var results = [Result]()
+    @State private var username = ""
+    @State private var email = ""
+
+    var disabledForm: Bool {
+        username.count < 7 || !isValidEmail(email)
+    }
 
     var body: some View {
-        List(results, id: \.trackId) { item in
-            VStack(alignment: .leading) {
-                Text(item.trackName)
-                    .font(.headline)
-
-                Text(item.collectionName)
+        Form {
+            Section {
+                TextField("Username", text: $username)
+                TextField("Email", text: $email)
             }
-        }
-        .onAppear(perform: loadData)    // API call when List appears
-    }
 
-    func loadData() {
-        guard let url = URL(string: "https://itunes.apple.com/search?term=taylor+swift&entity=song") else {
-            print("Invalid URL")
-            return
-        }
-
-        // Create request
-        let request = URLRequest(url: url)
-
-
-        // Execute request
-        URLSession.shared.dataTask(with: request) { data, respsonse, error in
-            if let data = data {
-                if let decodedResposne = try? JSONDecoder().decode(Response.self, from: data) {
-                    DispatchQueue.main.async {
-                        self.results = decodedResposne.results
-                    }
-
-                    // Completed Successfully
-                    return
+            Section {
+                Button("Create Account") {
+                    print("Creating account...")
                 }
             }
-
-            print("Fetch failed \(String(describing: error?.localizedDescription))")
-        }.resume()  // Must remember to include `.resume()` or it will do nothing
+            .disabled(disabledForm)
+        }
     }
+
+    func isValidEmail(_ email: String) -> Bool {
+        if email.isEmpty {
+            return false
+        }
+
+        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+
+        let emailPred = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+        return emailPred.evaluate(with: email)
+    }
+
 }
 
 struct ContentView_Previews: PreviewProvider {
