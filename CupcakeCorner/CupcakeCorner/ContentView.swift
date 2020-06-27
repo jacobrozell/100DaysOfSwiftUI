@@ -8,27 +8,56 @@
 
 import SwiftUI
 
-class User: ObservableObject, Codable {
-    @Published var name = "Paul Hudson"
+struct Response: Codable {
+    var results: [Result]
+}
 
-    private enum CodingKeys: CodingKey {
-        case name
-    }
-
-    required init(from decoder: Decoder) throws {
-        let container = try decoder.container(keyedBy: CodingKeys.self)
-        name = try container.decode(String.self, forKey: .name)
-    }
-
-    func encode(to encoder: Encoder) throws {
-        var container = encoder.container(keyedBy: CodingKeys.self)
-        try container.encode(name, forKey: .name)
-    }
+struct Result: Codable {
+    var trackId: Int
+    var trackName: String
+    var collectionName: String
 }
 
 struct ContentView: View {
+    @State private var results = [Result]()
+
     var body: some View {
-        Text("Hello, World!")
+        List(results, id: \.trackId) { item in
+            VStack(alignment: .leading) {
+                Text(item.trackName)
+                    .font(.headline)
+
+                Text(item.collectionName)
+            }
+        }
+        .onAppear(perform: loadData)    // API call when List appears
+    }
+
+    func loadData() {
+        guard let url = URL(string: "https://itunes.apple.com/search?term=taylor+swift&entity=song") else {
+            print("Invalid URL")
+            return
+        }
+
+        // Create request
+        let request = URLRequest(url: url)
+
+
+        // Execute request
+        URLSession.shared.dataTask(with: request) { data, respsonse, error in
+            if let data = data {
+                if let decodedResposne = try? JSONDecoder().decode(Response.self, from: data) {
+                    DispatchQueue.main.async {
+                        self.results = decodedResposne.results
+                    }
+
+                    // Completed Successfully
+                    return
+                }
+            }
+
+            print("Fetch failed \(String(describing: error?.localizedDescription))")
+        }.resume()  // Must remember to include `.resume()` or it will do nothing
     }
 }
 
